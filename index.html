@@ -197,6 +197,23 @@ footer.site{padding-block:40px 60px;border-top:1px solid var(--line);font-size:1
 footer.site a{color:var(--ink-2)}
 a{color:inherit}
 @media (prefers-reduced-motion:no-preference){.btn{transition:transform .12s}.btn:hover{transform:translateY(-1px)}}
+
+/* online checkout */
+.buy-panel{margin-top:28px;background:var(--tint);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.buy-panel h3{font-size:clamp(22px,3vw,28px)}
+.incentive{font-weight:700;font-size:16px;line-height:1.35}
+.after{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}
+.after li{counter-increment:step;border-top:4px solid var(--ink);padding-top:10px;font-weight:700;font-size:15px;line-height:1.35;color:var(--ink)}
+.after li::before{content:counter(step);display:block;font:800 26px/1 var(--display);font-stretch:75%;margin-bottom:6px}
+.rc .after{grid-template-columns:1fr 1fr;margin-top:4px}
+.buy{padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.plan .buy,.fix .buy{margin-top:auto}
+.buy .btn{width:100%;justify-content:center;min-height:48px;text-align:center}
+.talk{display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;margin:0}
+.talk span{flex-basis:100%;font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.talk a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:860px){.after,.rc .after{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.after,.rc .after{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -259,7 +276,20 @@ a{color:inherit}
       <p>You're paying somebody every month. I'll tell you in writing what you're getting for it. Seven checks, one plain report of up to two pages, green, yellow or red on each.</p>
       <p>If your current company is doing a good job, the report will say so. The report doesn't include fixing anything.</p>
       <p class="fine"><b>What you get:</b> screenshots and sources for what was found, one 15-minute walkthrough if you want it, and one round of factual corrections. No passwords and no access needed. Delivered within 5 business days of payment and your intake form.</p>
-      <div><a class="btn primary" href="#start">Order a Reality Check</a></div>
+      <h3>What happens after you buy</h3>
+      <ol class="after">
+        <li>You get a confirmation.</li>
+        <li>Dame reaches out within 1 business day.</li>
+        <li>Your AI Answer Check is done within 48 hours.</li>
+        <li>Nothing posts without your OK.</li>
+      </ol>
+      <p class="fine">Full price. No online discount. Card numbers are never typed on this site.</p>
+      <div class="buy" data-checkout="reality-check" data-name="Reality Check" data-price="$297 one time">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <ol class="checks">
       <li><div><b>Google Business Profile</b>Last post, last new photo, last review reply. Those dates are public.</div></li>
@@ -279,6 +309,16 @@ a{color:inherit}
     <h2>Fix it once. No monthly bill.</h2>
     <p class="lede">For the problem you already know you have. Each one is a single job with a set price, finished in about two weeks once I have your access.</p>
   </div>
+  <div class="buy-panel">
+    <h3>What happens after you buy</h3>
+    <ol class="after">
+      <li>You get a confirmation.</li>
+      <li>Dame reaches out within 1 business day.</li>
+      <li>Your AI Answer Check is done within 48 hours.</li>
+      <li>Nothing posts without your OK.</li>
+    </ol>
+    <p class="fine">Full price. No online discount. Card numbers are never typed on this site.</p>
+  </div>
   <div class="fixes">
     <div class="fix">
       <h3>Reply Roundup</h3>
@@ -288,6 +328,12 @@ a{color:inherit}
         <li>A written reply to up to 50 of your unanswered reviews, bad ones first. You approve each one.</li>
         <li>A review request text and a card design with a QR code</li>
       </ul>
+      <div class="buy" data-checkout="reply-roundup" data-name="Reply Roundup" data-price="$197 one time">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="fix">
       <h3>Listing Cleanup</h3>
@@ -297,6 +343,12 @@ a{color:inherit}
         <li>Your name, address and phone matched on Google, Facebook, BBB, Yelp, Nextdoor and the major directories</li>
         <li>Duplicate listings reported for merging or removal</li>
       </ul>
+      <div class="buy" data-checkout="listing-cleanup" data-name="Listing Cleanup" data-price="$147 one time">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="fix">
       <h3>Photo Day</h3>
@@ -306,6 +358,13 @@ a{color:inherit}
         <li>I come out on an evening or a Saturday and photograph your shop, trucks, crew and finished work</li>
         <li>30 edited photos added to Google and Facebook, and all of them for you to keep</li>
       </ul>
+      <div class="buy" data-checkout="photo-day" data-name="Photo Day" data-price="$249 one time">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <p class="fine">Online price is $249. Monthly clients, call or text for $199.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="fix">
       <h3>Get Found Setup</h3>
@@ -317,6 +376,12 @@ a{color:inherit}
         <li>A one-page website on your own domain with your reviews, services and a call button</li>
         <li>Includes Listing Cleanup</li>
       </ul>
+      <div class="buy" data-checkout="get-found-setup" data-name="Get Found Setup" data-price="$497 one time">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
   </div>
   <p class="fine" style="margin-top:20px">The domain for a Get Found website is paid directly to the provider, usually about $12 to $20 a year. No markup.</p>
@@ -326,7 +391,17 @@ a{color:inherit}
   <div class="stack">
     <span class="eyebrow">If you want it handled</span>
     <h2>Monthly plans. All month to month.</h2>
-    <p class="lede">No contract, no cancellation fee, no notice period. Billing starts the day I have your access and materials, not the day you sign.</p>
+    <p class="lede">No contract, no setup fee, no cancellation fee, no notice period. Billing starts the day I have your access and materials, not the day you sign.</p>
+  </div>
+  <div class="buy-panel">
+    <h3>What happens after you buy</h3>
+    <ol class="after">
+      <li>You get a confirmation.</li>
+      <li>Dame reaches out within 1 business day.</li>
+      <li>Your AI Answer Check is done within 48 hours.</li>
+      <li>Nothing posts without your OK.</li>
+    </ol>
+    <p class="fine">Full price. No online discount. Card numbers are never typed on this site.</p>
   </div>
   <div class="plans">
     <div class="plan pick">
@@ -344,7 +419,14 @@ a{color:inherit}
         <li>Replies to up to 20 new reviews. You approve each one before it posts.</li>
         <li>Google listing kept current: hours, holidays, services, photos</li>
         <li>A short check-in every week, and a one-page monthly report with every item dated</li>
+        <li>AI Answer Check included: what ChatGPT and Gemini say about you on day 1 and day 30, with dated screenshots.</li>
       </ul>
+      <div class="buy" data-checkout="open-door" data-name="Open Door" data-price="$400 a month">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="plan">
       <h3>Review Care</h3>
@@ -358,6 +440,12 @@ a{color:inherit}
         <li>Monthly report: new reviews, replies sent, rating</li>
       </ul>
       <p class="fine">No social posts, photo work or ongoing listing overhaul.</p>
+      <div class="buy" data-checkout="review-care" data-name="Review Care" data-price="$199 a month">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="plan">
       <h3>Main Street</h3>
@@ -369,9 +457,15 @@ a{color:inherit}
         <li>A review request to every customer you send me, good job or bad</li>
         <li>A written reply to every review. You approve it before it posts.</li>
         <li>Your business details submitted and corrected on the major directories</li>
-        <li>Search visibility tune-up every 90 days, so your business stays easy to find and ready to be recommended.</li>
+        <li>AI search re-check every 90 days, so your business stays easy to find and ready to be recommended.</li>
         <li>Monthly report with every item dated</li>
       </ul>
+      <div class="buy" data-checkout="main-street" data-name="Main Street" data-price="$750 a month">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
     <div class="plan">
       <h3>Full Crew</h3>
@@ -383,6 +477,12 @@ a{color:inherit}
         <li>Your top 3 local competitors watched, with a monthly note on what is working for them</li>
         <li>A planning call every 90 days, evenings or Saturday, and a 90-day plan</li>
       </ul>
+      <div class="buy" data-checkout="full-crew" data-name="Full Crew" data-price="$1,200 a month">
+        <p class="incentive">Start online today and your AI Answer Check is done within 48 hours.</p>
+        <a class="btn primary checkout-go" href="tel:+19723029362">Call or text to start</a>
+        <p class="fine pay-note" hidden></p>
+        <p class="talk"><span>Talk to Dame</span><a href="tel:+19723029362">(972) 302-9362</a><a href="mailto:damon@ellisfrontdoor.com">damon@ellisfrontdoor.com</a><a href="#start">Or send a note</a></p>
+      </div>
     </div>
   </div>
   <p class="fine" style="margin-top:20px"><b>Add to any plan:</b> 4 extra short videos for $300 a month · Photo Day at $199 for monthly clients · an extra location of the same business at half price.</p>
@@ -398,7 +498,7 @@ a{color:inherit}
         <tr><td>A way to ask for reviews</td><td>Happy customers rarely review on their own. Angry ones always do. Without asking, your rating drifts below your actual work. Review Care and Open Door include a request kit you use. Main Street and Full Crew send a request to every customer you send me, good job or bad.</td></tr>
         <tr><td>Review replies</td><td>An unanswered review says nobody is home. A good answer can win the next customer. Review Care and Open Door cover up to 20 a month. Main Street and Full Crew reply to every review. You approve before anything posts.</td></tr>
         <tr><td>Business details matched</td><td>On Main Street and Full Crew, and in Listing Cleanup. Old listings with a wrong phone number quietly send calls nowhere, and make search engines and AI tools trust your listing less.</td></tr>
-        <tr><td>Search visibility tune-up every 90 days</td><td>On Main Street and Full Crew, so your business stays easy to find and ready to be recommended.</td></tr>
+        <tr><td>AI search re-check every 90 days</td><td>On Main Street and Full Crew, so your business stays easy to find and ready to be recommended.</td></tr>
         <tr><td>Month to month</td><td>Twelve-month lock-ins, auto-renewals, and bills that keep coming after you cancel.</td></tr>
       </tbody>
     </table>
@@ -440,7 +540,7 @@ a{color:inherit}
       <h2>I don't promise your phone will ring.</h2>
       <p>Nobody can honestly promise that, and every angry review above came from a company that did.</p>
       <p>What I promise is <strong>everything listed on your plan, every month.</strong> One page lists every post, reply and update, with dates. If it isn't on the page, it didn't happen.</p>
-      <p>If I miss anything on your plan in a month, <strong>that month is free.</strong></p>
+      <p>If I miss anything on your plan in a month, <strong>that month is free, or refunded if you already paid.</strong></p>
       <p class="fine" style="color:inherit;opacity:.75">Work waiting on your approval, access or photos doesn't count as a miss.</p>
     </div>
     <div class="stack">
@@ -499,7 +599,7 @@ a{color:inherit}
     <details><summary>Why pay you instead of using Canva or ChatGPT myself?</summary><div><p>You can. Most owners start, then stop by week three because the business comes first. What you're paying for is it getting done every week, checked for wrong prices and wrong details, answered when reviews come in, and written down so you can see it happened.</p></div></details>
     <details><summary>Have you done this for a business like mine?</summary><div><p>Not yet for a paying client. I'm taking my first ones now. What I can show you is the system I run every day on my own pages, the demo work above, and a Reality Check on your own business before you commit to anything monthly.</p></div></details>
     <details><summary>Which package should I start with?</summary><div><p>Already paying a marketing company? Start with the Reality Check. Listing never claimed or no website? Get Found Setup. Good reviews nobody answers? Review Care. Most other businesses start with Open Door.</p></div></details>
-    <details><summary>What's the difference between Open Door and Main Street?</summary><div><p>Open Door covers the weekly basics: 12 posts, 4 Google posts and up to 20 review replies a month. Main Street adds more posting, a Google post every week, a reply to every review, directory fixes and a search visibility tune-up every 90 days, so your business stays easy to find and ready to be recommended.</p></div></details>
+    <details><summary>What's the difference between Open Door and Main Street?</summary><div><p>Open Door covers the weekly basics: 12 posts, 4 Google posts and up to 20 review replies a month, plus an AI Answer Check on day 1 and day 30. Main Street adds more posting, a Google post every week, a reply to every review, directory listings corrected, and an AI search re-check every 90 days, so your business stays easy to find and ready to be recommended.</p></div></details>
     <details><summary>Will this get me more calls?</summary><div><p>It should help, and your report shows the numbers that suggest whether it is. I won't promise calls, because nobody honestly can. See "Reading the report" above for what I measure and how I keep work done separate from results.</p></div></details>
     <details><summary>How much work is this for me?</summary><div><p>About an hour to set up: the intake form and adding me as a manager. After that the goal is under 30 minutes a month for approvals and sending customer contacts.</p></div></details>
     <details><summary>What if I don't like a post?</summary><div><p>You see the month's posts ahead of time and can change or stop any of them. Review replies never post without your OK.</p></div></details>
@@ -559,6 +659,7 @@ a{color:inherit}
 </footer>
 </div>
 
+<script src="checkout-links.js"></script>
 <script>
 const CONFIG = { email: "damon@ellisfrontdoor.com" };
 const form = document.getElementById("intake");
@@ -586,6 +687,52 @@ document.getElementById("copy").addEventListener("click", async () => {
   try { await navigator.clipboard.writeText(pre.textContent); btn.textContent = "Copied"; }
   catch { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Selected, press Ctrl+C"; }
 });
+
+(function () {
+  var links = window.ELLIS_CHECKOUT_LINKS || {};
+  var phone = "tel:+19723029362";
+  function ready(url) {
+    if (typeof url !== "string") return false;
+    var value = url.trim();
+    if (!value || /placeholder/i.test(value)) return false;
+    try {
+      return new URL(value).protocol === "https:";
+    } catch (err) {
+      return false;
+    }
+  }
+  var blocks = document.querySelectorAll("[data-checkout]");
+  for (var i = 0; i < blocks.length; i++) {
+    var block = blocks[i];
+    var name = block.getAttribute("data-name") || "this package";
+    var price = block.getAttribute("data-price") || "";
+    var link = block.querySelector("a.checkout-go");
+    var note = block.querySelector(".pay-note");
+    if (!link) continue;
+    var url = links[block.getAttribute("data-checkout")];
+    if (ready(url)) {
+      link.href = url.trim();
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Start online";
+      link.setAttribute("aria-label", "Start online: " + name + (price ? ", " + price : "") + ". Opens Square checkout in a new tab.");
+      if (note) {
+        note.hidden = false;
+        note.textContent = "Opens Square checkout in a new tab.";
+      }
+    } else {
+      link.href = phone;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      link.textContent = "Call or text to start";
+      link.setAttribute("aria-label", "Call or text to start " + name + " at (972) 302-9362");
+      if (note) {
+        note.hidden = true;
+        note.textContent = "";
+      }
+    }
+  }
+})();
 </script>
 
 </body>
