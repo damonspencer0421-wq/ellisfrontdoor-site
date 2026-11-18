@@ -22,13 +22,13 @@
                     tenth link. They call or text, and say they are on a plan.
 */
 window.ELLIS_CHECKOUT_LINKS = {
-  "review-care": "PLACEHOLDER",
-  "open-door": "PLACEHOLDER",
-  "main-street": "PLACEHOLDER",
-  "full-crew": "PLACEHOLDER",
-  "reality-check": "PLACEHOLDER",
-  "get-found-setup": "PLACEHOLDER",
-  "reply-roundup": "PLACEHOLDER",
-  "listing-cleanup": "PLACEHOLDER",
-  "photo-day": "PLACEHOLDER"
+  "review-care": "https://square.link/u/XF5YHvgc",
+  "open-door": "https://square.link/u/TYR7Yyuz",
+  "main-street": "https://square.link/u/3DFlS4xE",
+  "full-crew": "https://square.link/u/JV3g6dxO",
+  "reality-check": "https://square.link/u/C78T96K4",
+  "get-found-setup": "https://square.link/u/tK8quiRX",
+  "reply-roundup": "https://square.link/u/XnCzl4As",
+  "listing-cleanup": "https://square.link/u/1ThotbSn",
+  "photo-day": "https://square.link/u/jH5OkuBC"
 };
